@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>TEMA 4 - TÉCNICAS DE ACCESO A DATOS EN PHP</title>
+    <title>TEMA 5 - DESARROLLO DE APLICACIONES WEB</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -62,10 +62,10 @@
 </head>
 <body>
     <header>
-        <h1><b>TEMA 4 - TÉCNICAS DE ACCESO A DATOS EN PHP</b></h1>
+        <h1><b>TEMA 5 - DESARROLLO DE APLICACIONES WEB</b></h1>
     </header>
     <main>
-        <h2><b>ÍNDICE EJERCICIOS TEMA 4</b></h2>
+        <h2><b>ÍNDICE EJERCICIOS TEMA 5</b></h2>
         
         
         <table border solid black 2px>
@@ -98,71 +98,24 @@
             <th>Num</th>
             <th>Descripción</th>
             <th colspan="2">PDO</th>
-            <th colspan="2">MySQLi</th>
             </thead>
             <tr>
                 <td>1</td>
                 <td>Conexión a la base de datos.</td>
                 <td><a href="codigoPHP/ejercicio01pdo.php"><img src="webroot/media/images/botonplay.png" alt="boton_play"></a></td>
                 <td><a href="mostrarcodigo/muestraejercicio01pdo.php"><img src="webroot/media/images/botoncode.png" alt="boton_code"></a></td>
-                <td><a href=""><img src="" alt=""></a></td>
-                <td><a href=""><img src="" alt=""></a></td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>Mostrar el contenido de la tabla Departamento y el número de registros.</td>
                 <td><a href="codigoPHP/ejercicio02pdo.php"><img src="webroot/media/images/botonplay.png" alt="boton_play"></a></td>
                 <td><a href="mostrarcodigo/muestraejercicio02pdo.php"><img src="webroot/media/images/botoncode.png" alt="boton_code"></a></td>
-                <td><a href="codigoPHP/ejercicio02mysqli.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio02mysqli.php"></a></td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>Formulario para añadir un departamento a la tabla Departamento.</td>
                 <td><a href="codigoPHP/ejercicio03pdo.php"><img src="webroot/media/images/botonplay.png" alt="boton_play"></a></td>
                 <td><a href="mostrarcodigo/muestraejercicio03pdo.php"><img src="webroot/media/images/botoncode.png" alt="boton_code"></a></td>
-                <td><a href="codigoPHP/ejercicio03mysqli.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio03mysqli.php"></a></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Formulario de búsqueda de departamentos por descripción .</td>
-                <td><a href="codigoPHP/ejercicio04pdo.php"><img src="webroot/media/images/botonplay.png" alt="boton_play"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio04pdo.php"><img src="webroot/media/images/botoncode.png" alt="boton_code"></a></td>
-                <td><a href="codigoPHP/ejercicio04mysqli.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio04mysqli.php"></a></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Pagina web que añade tres registros a nuestra tabla Departamento.</td>
-                <td><a href="codigoPHP/ejercicio05pdo.php"><img src="webroot/media/images/botonplay.png" alt="boton_play"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio05pdo.php"><img src="webroot/media/images/botoncode.png" alt="boton_code"></a></td>
-                <td><a href="codigoPHP/ejercicio05mysqli.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio05mysqli.php"></a></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Pagina web que cargue registros en la tabla Departamento.</td>
-                <td><a href="codigoPHP/ejercicio06pdo.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio06pdo.php"></a></td>
-                <td><a href="codigoPHP/ejercicio06mysqli.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio06mysqli.php"></a></td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Página web que toma datos (código y descripción) de un fichero xml y los añade a la tabla.</td>
-                <td><a href="codigoPHP/ejercicio07pdo.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio07pdo.php"></a></td>
-                <td><a href="codigoPHP/ejercicio07mysqli.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio07mysqli.php"></a></td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Página web que toma datos (código y descripción) de la tabla Departamento.</td>
-                <td><a href="codigoPHP/ejercicio08pdo.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio08pdo.php"></a></td>
-                <td><a href="codigoPHP/ejercicio08mysqli.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio08mysqli.php"></a></td>
             </tr>
         </table>
     </main>
