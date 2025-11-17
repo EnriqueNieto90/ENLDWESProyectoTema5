@@ -100,22 +100,22 @@
             <th colspan="2">PDO</th>
             </thead>
             <tr>
+                <td>0</td>
+                <td>Mostrar el contenido de las variables superglobales y phpinfo().</td>
+                <td><a href="codigoPHP/ejercicio00pdo.php"><img src="webroot/media/images/botonplay.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio00pdo.php"><img src="webroot/media/images/botoncode.png" alt="boton_code"></a></td>
+            </tr>
+            <tr>
                 <td>1</td>
-                <td>Conexión a la base de datos.</td>
+                <td>Desarrollo de un control de acceso con identificación del usuario basado en la función header().</td>
                 <td><a href="codigoPHP/ejercicio01pdo.php"><img src="webroot/media/images/botonplay.png" alt="boton_play"></a></td>
                 <td><a href="mostrarcodigo/muestraejercicio01pdo.php"><img src="webroot/media/images/botoncode.png" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>Mostrar el contenido de la tabla Departamento y el número de registros.</td>
+                <td>Desarrollo de un control de acceso con identificación del usuario basado en la función header() y en el uso de una tabla “Usuario” de la base de datos. (PDO).</td>
                 <td><a href="codigoPHP/ejercicio02pdo.php"><img src="webroot/media/images/botonplay.png" alt="boton_play"></a></td>
                 <td><a href="mostrarcodigo/muestraejercicio02pdo.php"><img src="webroot/media/images/botoncode.png" alt="boton_code"></a></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Formulario para añadir un departamento a la tabla Departamento.</td>
-                <td><a href="codigoPHP/ejercicio03pdo.php"><img src="webroot/media/images/botonplay.png" alt="boton_play"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio03pdo.php"><img src="webroot/media/images/botoncode.png" alt="boton_code"></a></td>
             </tr>
         </table>
     </main>

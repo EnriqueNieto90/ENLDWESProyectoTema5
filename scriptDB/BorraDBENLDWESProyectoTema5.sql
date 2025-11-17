@@ -1,9 +1,9 @@
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Other/SQLTemplate.sql to edit this template
- */
 /**
- * Author:  enrique.nielor
+ * Author:  Enrique Nieto Lorenzo
  * Created: 17 nov. 2025
  */
+
+DROP DATABASE IF EXISTS DBENLDWESProyectoTema5;
+
+DROP USER IF EXISTS 'userENLDWESProyectoTema5'@'%';
 
