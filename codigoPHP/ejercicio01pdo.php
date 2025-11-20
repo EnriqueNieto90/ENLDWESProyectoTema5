@@ -75,7 +75,7 @@
             
             $aUsuarios = [
                 "enrique" => [hash('sha256', 'paso'), "Enrique Nieto"],
-                "heraclio" => [hash('sha256', 'paso'), "Héraclio Borbujo"]
+                "heraclio" => [hash('sha256', 'paso'), "Heraclio Borbujo"]
             ];
             
             $usuario=$_SERVER['PHP_AUTH_USER'];
@@ -100,21 +100,21 @@
             ?>
             
             // Verificar si se han enviado credenciales con isset. Y si son correctas
-if (!isset($_SERVER['PHP_AUTH_USER']) ||
-    $_SERVER['PHP_AUTH_USER'] != 'admin' || 
-    $_SERVER['PHP_AUTH_PW'] != 'paso'){
-    // Enviar encabezado de autenticación para solicitar credenciales
-    header('WWW-Authenticate: Basic realm="Contenido restringido"');
+            if (!isset($_SERVER['PHP_AUTH_USER']) ||
+                $_SERVER['PHP_AUTH_USER'] != 'admin' || 
+                $_SERVER['PHP_AUTH_PW'] != 'paso'){
+                // Enviar encabezado de autenticación para solicitar credenciales
+                header('WWW-Authenticate: Basic realm="Contenido restringido"');
 
-    header('HTTP/1.0 401 Unauthorized');
-    
-    // Mostrar mensaje si damos a cancelar
-    echo '<h1>Acceso denegado. Se requiere autenticación.</h1>';
-    exit;
-} 
+                header('HTTP/1.0 401 Unauthorized');
 
-// Si llega aquí, la autenticación fue exitosa.
-?>
+                // Mostrar mensaje si damos a cancelar
+                echo '<h1>Acceso denegado. Se requiere autenticación.</h1>';
+                exit;
+            } 
+
+            // Si llega aquí, la autenticación fue exitosa.
+            ?>
         </section>
         
             <h2>Bienvenido/a, <?php echo $aUsuarios[$usuario][1] ?> </h2>
