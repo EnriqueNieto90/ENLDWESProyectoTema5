@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>TEMA 5 - DESARROLLO DE APLICACIONES WEB</title>
+    <link rel="stylesheet" href="./webroot/css/estiloFormularioTabla.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -55,6 +56,13 @@
             text-align: center;
             height: 150px;
 	    color: white;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        footer i{
+            font-size: 2.1rem;
         }
 	
 
@@ -68,7 +76,7 @@
         <h2><b>ÍNDICE EJERCICIOS TEMA 5</b></h2>
         
         
-        <table border solid black 2px>
+        <table >
             <thead>
             <th></th>
             <th>ED</th>
@@ -93,7 +101,7 @@
                 <td></td>
             </tr>
         </table>
-        <table border solid black 2px>
+        <table >
             <thead>
             <th>Num</th>
             <th>Descripción</th>
@@ -120,9 +128,11 @@
         </table>
     </main>
     <footer>
-        <caption>
-            <a href="/ENLDWESProyectoDWES/indexProyectoDWES.php">Enrique Nieto Lorenzo</a> | 03/10/2025
-        </caption>
+        <div>
+            <h4>2025-26 IES LOS SAUCES. © Todos los derechos reservados.</h4>
+        <p><a href="/ENLDWESProyectoDWES/indexProyectoDWES.php">Enrique Nieto Lorenzo</a> Fecha de Actualización : 20-11-2025</p>
+        <a href="https://github.com/EnriqueNieto90/ENLDWESLoginLogoffTema5.git" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
     </footer>
 </body>
 </html>
