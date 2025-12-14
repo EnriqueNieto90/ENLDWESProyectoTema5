@@ -1,3 +1,26 @@
+<?php
+    /**
+    * @author: Enrique Nieto Lorenzo
+    * @since: 18/11/2025
+    * 1. Desarrollo de un control de acceso con identificación del usuario basado en la función header().
+    */
+    //Información de la función header en https://www.php.net/manual/es/function.header.php
+
+    // Verificamos si se han enviado credenciales las credenciales.
+    if (!isset($_SERVER['PHP_AUTH_USER']) ||
+        $_SERVER['PHP_AUTH_USER'] != 'admin' || 
+        $_SERVER['PHP_AUTH_PW'] != 'paso'){
+        
+        // Mostrar header de autenticación para solicitar credenciales
+        header('WWW-Authenticate: Basic realm="Contenido restringido"');
+        header('HTTP/1.0 401 Unauthorized');
+
+        // Si damos a cancelar mostramos este mensaje
+        echo '<h1>Acceso denegado. Se requiere autenticación.</h1>';
+        exit;
+    } 
+
+    ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -52,13 +75,6 @@
             text-align: center;
             height: 150px;
 	    color: white;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-        }
-        footer i{
-            font-size: 2.1rem;
         }
 	main{
 	justify-content:center;
@@ -70,41 +86,23 @@
     <header>
         <h1><b>EJERCICIO 1 PDO</b></h1>
     </header>
-            <?php
-            /**
-            * @author: Enrique Nieto Lorenzo
-            * @since: 25/11/2025
-            * 1. Desarrollo de un control de acceso con identificación del usuario basado en la función header().
-            */
+    <main>   
+        <section>
+            <h2>Has iniciado sesión correctamente</h2>
+            <p>
+                Tu usuario de acceso es: <strong><?php echo $_SERVER['PHP_AUTH_USER']; ?></strong>
+            </p>
+            <p>
+                Tu contraseña de acceso es: <strong><?php echo $_SERVER['PHP_AUTH_PW']; ?></strong>
+            </p>
+            <h3>Bienvenido/a, <?php echo $_SERVER['PHP_AUTH_USER'] ?> </h3>
+        </section>
+    </main>
 
-            // Comprobar que se han enviado credenciales con isset. Y comprobar que son correctas
-            if (!isset($_SERVER['PHP_AUTH_USER']) ||
-                $_SERVER['PHP_AUTH_USER'] != 'admin' || 
-                $_SERVER['PHP_AUTH_PW'] != 'paso'){
-                // Enviar encabezado de autenticación para solicitar credenciales
-                header('WWW-Authenticate: Basic realm="Contenido restringido"');
-                header('HTTP/1.0 401 Unauthorized');
-                //Si damos a cancelar mostramos mensaje de denegación de acceso
-                echo '<h1>Acceso denegado. Se requiere autenticación.</h1>';
-                exit;
-            } 
-            // Si el programa llega aquí, la autenticación tuvo éxito.
-            ?>    
-        <main>
-            <h2>Acceso correcto</h2>
-            <p>
-                Su usuario de acceso es: <strong><?php echo $_SERVER['PHP_AUTH_USER']; ?></strong>
-            </p>
-            <p>
-                Y su contraseña de acceso es: <strong><?php echo $_SERVER['PHP_AUTH_PW']; ?></strong>
-            </p>
-        </main>
     <footer>
-        <div>
-            <h4>2025-26 IES LOS SAUCES. © Todos los derechos reservados.</h4>
-        <p><a href="/ENLDWESProyectoTema5/indexProyectoTema5.php">Enrique Nieto Lorenzo</a> Fecha de Actualización : 27-11-2025</p>
-        <a href="https://github.com/EnriqueNieto90/ENLDWESLoginLogoffTema5.git" target="_blank"><i class="fa-brands fa-github"></i></a>
-        </div>
+        <caption>
+            <a href="/ENLDWESProyectoTema5/indexProyectoTema5.php">Enrique Nieto Lorenzo</a> | 03/11/2025
+        </caption>
     </footer>
 </body>
 </html>
