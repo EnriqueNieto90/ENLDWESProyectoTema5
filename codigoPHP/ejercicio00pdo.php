@@ -1,81 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<body>
-    <header>
-        <h1><b>EJERCICIO 0 PDO</b></h1>
-    </header>
-    <main>   
-        <section>
-            <?php
-            /**
-            * @author: Enrique Nieto Lorenzo
-            * @since: 18/11/2025
-            * 0. Mostrar el contenido de las variables superglobales y phpinfo().
-            */
-            
-            //Contenido de la variable $_SESSION-------------------------------------------------------
-            echo '<h3>Contenido de la variable $_SESSION</h3>';
-            echo '<table >';
-            echo '<tr><th>Variable</th><th>Valor</th></tr>';
-            if (!empty($_SESSION)) {
-                foreach ($_SESSION as $variable => $resultado) {
-                    echo "<tr>";
-                    echo '<td>$_SESSION[' . $variable . ']</td>';
-                    echo "<td><pre>" . print_r($resultado, true) . "</pre></td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='2'><em>La variable \$_SESSION está vacía.</em></td></tr>";
-            }
-            echo "</table>";
-
-            //Contenido de la variable $_COOKIE---------------------------------------------------
-            echo '<h3>Contenido de la variable $_COOKIE</h3>';
-            echo '<table >';
-            echo '<tr><th>Variable</th><th>Valor</th></tr>';
-            if (!empty($_COOKIE)) {
-                foreach ($_COOKIE as $variable => $resultado) {
-                    echo "<tr>";
-                    echo '<td>$_COOKIE[' . $variable . ']</td>';
-                    echo "<td><pre>" . $resultado . "</pre></td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='2'><em>La variable \$_COOKIE está vacía.</em></td></tr>";
-            }
-            echo "</table>";
-            
-            //Contenido de la variable $_SERVER-----------------------------------------------
-            echo '<h3>Contenido de la variable $_SERVER</h3>';
-            echo '<table >';
-            echo '<tr><th>Variable</th><th>Valor</th></tr>';
-            if (!empty($_SERVER)) {
-                foreach ($_SERVER as $variable => $resultado) {
-                    echo "<tr>";
-                    echo '<td>$_SERVER[' . $variable . ']</td>';
-                    echo "<td><pre>" . print_r($resultado, true) . "</pre></td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='2'><em>La variable \$_SERVER está vacía.</em></td></tr>";
-            }
-            echo "</table>";
-            
-            echo '<div id="phpinfo">'; // Contenedor para phpinfo()
-            phpinfo();
-            echo '</div>';
-            ?>
-        </section>
-    </main>
-
-    <footer>
-        <div>
-            <h4>2025-26 IES LOS SAUCES. © Todos los derechos reservados.</h4>
-        <p><a href="/ENLDWESProyectoTema5/indexProyectoTema5.php">Enrique Nieto Lorenzo</a> Fecha de Actualización : 20-11-2025</p>
-        <a href="https://github.com/EnriqueNieto90/ENLDWESLoginLogoffTema5.git" target="_blank"><i class="fa-brands fa-github"></i></a>
-        </div>
-    </footer>
-</body>
 <head>
     <meta charset="UTF-8">
     <title>EJERCICIO 0 PDO</title>
@@ -128,39 +52,85 @@
             text-align: center;
             height: 150px;
 	    color: white;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-        }
-        footer i{
-            font-size: 2.1rem;
         }
 	main{
 	justify-content:center;
 	}
-        table{
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 40px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-        }
-
-        th, td{
-            padding: 15px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-
-        th{
-            background-color: green;
-            color: white;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.9em;
-        }
 
     </style>
 </head>
+<body>
+    <header>
+        <h1><b>EJERCICIO 0 PDO</b></h1>
+    </header>
+    <main>   
+        <section>
+            <?php
+            /**
+            * @author: Enrique Nieto Lorenzo
+            * @since: 18/11/2025
+            * 0. Mostrar el contenido de las variables superglobales y phpinfo().
+            */
+            
+            //Contenido de la variable $_SERVER-----------------------------------------------
+            echo '<h3>Contenido de la variable $_SERVER</h3>';
+            echo '<table >';
+            echo '<tr><th>Variable</th><th>Valor</th></tr>';
+            if (!empty($_SERVER)) {
+                foreach ($_SERVER as $variable => $resultado) {
+                    echo "<tr>";
+                    echo '<td>$_SERVER[' . $variable . ']</td>';
+                    echo "<td><pre>" . print_r($resultado, true) . "</pre></td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='2'><em>La variable \$_SERVER está vacía.</em></td></tr>";
+            }
+            echo "</table>";
+
+            //Contenido de la variable $_SESSION-------------------------------------------------------
+            echo '<br><br><h3>Contenido de la variable $_SESSION</h3><br>';
+            echo '<table >';
+            echo '<tr><th>Variable</th><th>Valor</th></tr>';
+            if (!empty($_SESSION)) {
+                foreach ($_SESSION as $variable => $resultado) {
+                    echo "<tr>";
+                    echo '<td>$_SESSION[' . $variable . ']</td>';
+                    echo "<td><pre>" . print_r($resultado, true) . "</pre></td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='2'><em>La variable \$_SESSION está vacía.</em></td></tr>";
+            }
+            echo "</table>";
+
+            //Contenido de la variable $_COOKIE---------------------------------------------------
+            echo '<br><br><h3>Contenido de la variable $_COOKIE</h3><br>';
+            echo '<table >';
+            echo '<tr><th>Variable</th><th>Valor</th></tr>';
+            if (!empty($_COOKIE)) {
+                foreach ($_COOKIE as $variable => $resultado) {
+                    echo "<tr>";
+                    echo '<td>$_COOKIE[' . $variable . ']</td>';
+                    echo "<td><pre>" . $resultado . "</pre></td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='2'><em>La variable \$_COOKIE está vacía.</em></td></tr>";
+            }
+            echo "</table>";
+            echo '<div id="phpinfo">'; // Contenedor para phpinfo()
+            phpinfo();
+            echo '</div>';
+            ?>
+        </section>
+    </main>
+
+    <footer>
+        <caption>
+            <a href="/ENLDWESProyectoTema5/indexProyectoTema5.php">Enrique Nieto Lorenzo</a> | 03/11/2025
+        </caption>
+    </footer>
+</body>
 </html>
 
