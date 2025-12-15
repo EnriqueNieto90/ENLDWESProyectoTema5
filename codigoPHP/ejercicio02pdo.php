@@ -73,40 +73,48 @@
          * Ejercicio 2: Desarrollo de un control de acceso con identificación del usuario basado 
          * en la función header() y en el uso de una tabla “Usuario” de la base de datos. (PDO).
          */
-        //si no se han enviado las credenciales hay que pedir autenticación
-
-        $usuarioPasswd=$_SERVER['PHP_AUTH_USER'].$_SERVER['PHP_AUTH_PW'];
-
-       if(!isset($_SERVER['PHP_AUTH_USER'])) {
+        
+        // Si no se han enviado credenciales, pedir autenticación
+        if(!isset($_SERVER['PHP_AUTH_USER'])) {
             header('WWW-Authenticate: Basic Realm="Contenido restringido"');
             header('HTTP/1.0 401 Unauthorized');
             echo "Usuario no reconocido!";
-            exit; //el programa acaba aqui
+            exit;
         }
-        //si se han enviado las credenciales,se comprueban las credenciales, con la base de datos
-        //enlace a los datos de conexión
-        require_once '../config/confDBPDODes.php';
+
+        // Credenciales recibidas
+        $usuarioPasswd= $_SERVER['PHP_AUTH_USER'].$_SERVER['PHP_AUTH_PW'];
+
+        // Verificar con la base de datos
+        require_once '../config/confDBPDO.php';
+
         try {
-            $miDB = new PDO(DNS, USUARIODB, PSWD);
+            $miDB = new PDO(DSN, USERNAME, PASSWORD);
             $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "SELECT T01_CodUsuario,T01_Password,T01_DescUsuario  FROM T_01Usuario 
-              WHERE T01_CodUsuario= :usuario AND T01_Password = sha2(:passwd,256)";
+
+            $sql = "SELECT T01_CodUsuario, T01_Password, T01_DescUsuario 
+                    FROM T01_Usuarios 
+                    WHERE T01_CodUsuario = :usuario 
+                    AND T01_Password = SHA2(:passwd, 256)";
 
             $resultado = $miDB->prepare($sql);
             $resultado->execute([
                 ':usuario' => $_SERVER['PHP_AUTH_USER'],
-                ':passwd' => $usuarioPasswd]);
+                ':passwd' => $usuarioPasswd
+            ]);
 
             $usuarioBD = $resultado->fetch();
-            // Si no exite, se vuelve a pedir las credenciales.
-            if (!$usuarioBD || $usuarioBD['T01_Password'] !== hash('sha256', $usuarioPasswd)) {
+
+            // Si no existe, volver a pedir credenciales
+            if (!$usuarioBD) {
                 header('WWW-Authenticate: Basic Realm="Contenido restringido"');
                 header('HTTP/1.0 401 Unauthorized');
                 echo "Credenciales incorrectas!";
                 exit;
             }
+
         } catch (Exception $ex) {
-            echo"Error: " . $ex->getMessage();
+            echo "Error: " . $ex->getMessage();
             exit;
         }
         ?>
